@@ -4,28 +4,29 @@
 <head>
 	<meta charset="utf-8">
 	<title>Bloom Bloombuddy</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-    <script defer src="./build/bundle.js"></script>
+	<link rel="stylesheet" type="text/css" href="style 2.css">
+	<script defer src="./build/bundle.js"></script>
 </head>
 
 <body>
+
 	<header>
 		<div class="wrapper">
 			<img id="logo" src="logo.png" alt="Logo" height="120px" width="150px" />
 			<nav class="main">
 				<ul>
 					<li>
-						<a href="#">Home</a>
+						<a href="index.html">Home</a>
 					</li>
 					</li>
 					<li>
-						<a href="#">Meine Pflanzen</a>
+						<a href="meinePflanzen.html">Meine Pflanzen</a>
 					</li>
 					<li>
-						<a href="#">Standorte</a>
+						<a href="erinnerung.html">Erinnerung</a>
 					</li>
 					<li>
-						<a href="#">Pflegehinweise</a>
+						<a href="pflegeanleitung.html">Pflegehinweise</a>
 					</li>
 				</ul>
 			</nav>
@@ -34,28 +35,32 @@
 	<section class="main">
 		<div class="keyvisual">
 			<div class="wrapper">
-				
-		</div>
-		<div class="wrapper">
-			<div class="teaser">
-				<ul>
-					<li>
-						<img src="pflegeanleitung.jpg" alt="pflegeanleitung" height="310px" width="200px" />
-						<div class="text">
-							<h2>Pflegeanleitung</h2>
-							<a class="button" href="#">Mehr erfahren</a>
-						</div>
-					</li>
-					<li>
-						<img src="erinnerung.jpg" alt="Gießerinnerung" height="310px" width="200px" />
-						<div class="text">
-							<h2>Gießerinnerung</h2>
-							<a class="button" href="#">Mehr erfahren</a>
-						</div>
-					</li>
-				</ul>
+				<h1>Hier kannst du deine Pflanzen hinzufügen und verwalten!</h1>
 			</div>
-		</div>
+			<div class="wrapper">
+				<div class="teaser">
+					<h1>Meine Pflanzen</h1>
+					<div class="form-container">
+						<form>
+							<label for="pflanzenname">Pflanzenname:</label>
+							<input type="text" id="pflanzenname" name="pflanzenname"><br><br>
+							<label for="gießintervall">Intervall (in Tagen):</label>
+							<input type="number" id="gießintervall" name="gießintervall"><br><br>
+							<label for="standort">Standort:</label>
+							<select id="standort" name="standort">
+								<option value="Wohnzimmer">Wohnzimmer</option>
+								<option value="Schlafzimmer">Schlafzimmer</option>
+								<option value="Büro">Büro</option>
+								<option value="Garten">Garten</option>
+								<option value="Küche">Küche</option>
+								<option value="Balkon">Balkon</option>
+							</select><br><br>
+							<input type="button" value="Pflanze hinzufügen" onclick="pflanzeHinzufuegen()">
+						</form>
+					</div>
+					<h2>Pflanzenliste</h2>
+					<ul id="pflanzenliste">
+				</div>
 	</section>
 	<footer>
 		<div class="wrapper">

@@ -80,12 +80,12 @@
 				color: white;				
 			}
 			.keyvisual {
-				background-image: url(keyvisual.jpg);
+				background-image: url(keyvisual2.jpg);
 				height: 100vh;
-				min-height: 850px;
+				max-height: 890px;
 				background-size: cover; /*um Fläche mit einer Grafik ganz zu füllen*/
 			}
-			
+
 			.keyvisual .wrapper {
 				height: 100%;
 				box-sizing: border-box;
@@ -97,6 +97,7 @@
 				background: rgba(255,255,255,0.9); /* Code für bisschen transparent */
 				padding: 20px;
 				width: 400px;
+				height: 300px;
 			}
 			.keyvisual aside ul{
 				list-style: none;
@@ -177,11 +178,11 @@
 			}
 
 			footer{
-				background-color: #262626;
+				background-color: #11111c;
 			}
 			footer img{
 				width: 150px;
 			}
 			footer nav ul li a{
-				color: #fff;
+				color: white;
 			}
