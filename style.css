@@ -1,238 +1,196 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Roboto+Condensed&display=swap');
 
-html{font-size: 20px};
+			html{
+				font-size: 20px;
+			}
+			body { 
+				font-family: 'Roboto Condensed', sans-serif;
+				margin: 0;
+			}
+			h1 {
+				font-size: 1.9rem;
+			}
+			h2 {
+				font-size: 1.5rem;
+			}
+			h1, h2, h3 {
+				font-family: 'Noto Serif', serif;
+				font-weight: normal; /* Fettung der Schrift*/
+			}
 
-body{
-  font-family: "Roboto Condensed", 
-  sans-serif;
-  margin: 0;
-  
-}
+			.wrapper { 
+				max-width: 1000px; /* Maximale Breite festlegen*/
+				margin: 0 auto; /* Außenabstand "0 auto" = unsichtbare Flucht*/
+				position: relative;
+				padding: 20px; /* Innenabstand*/
+			}
+			header {
+				position: fixed; /* Header ist oben fixiert bei scrollen*/
+				width: 100%;
+				height: 100px;
+				top: 0;
+				left: 0;
+				background-color: rgba(255,255,255,0.9);
+				z-index: 100; /* macht, dass Header vor Content liegt -> je höher die Zahl, desto weiter ist er auf einer Ebene */
+			}
+			nav {
+				position: absolute;
+				top:0;
+				right: 0;
+			}
+			nav ul {
+				list-style: none; /* Sorgt dafür, dass Bulletpoints entfernt werden von der Liste*/
+				margin: 0;
+				padding: 0;
+			}
+			nav > ul > li { /* ">" sorgen dafür, dass nur Kindelemente angesprochen werden*/
+				display: inline-block; /*Sorgt dafür, dass alle Listenelemente in einer Reihe stehen*/
+			}
+			nav > ul > li > a { 
+				padding: 0 20px;
+				text-decoration: none; /* macht Linie unter Text weg (Linie wie bei Link) */
+				line-height: 100px;
+				display: block;
+				transition: all 0.5s;
+			}
+			header nav ul li a{
+				color: #5c6971;
+			}
+			header nav ul li:hover a{
+				background-color: #e2001a;
+				color: white;
+			}
+			header nav ul li ul {
+				visibility: hidden; /* ausblenden */
+				opacity: 0;
+				position: absolute;
+				background-color: #e2001a;
+				padding: 10px;
+				transition: all 0.5s 0.2s; /* 1. Begriff = Dauer der Einbledung 2. Begriff = Latenz*/
 
-h1{ font-size: 1.9rem; }
-h2{font-size: 1,5rem;}
+			}
+			header nav ul li:hover ul{
+				visibility: visible; /* einblenden */
+				opacity: 1;
+			}
+			header nav ul li ul li a{
+				text-decoration: none;
+				display: block;
+				padding: 10px;
+				color: white;				
+			}
+			.keyvisual {
+				background-image: url(keyvisual.jpg);
+				height: 100vh;
+				min-height: 850px;
+				background-size: cover; /*um Fläche mit einer Grafik ganz zu füllen*/
+			}
+			.keyvisual:after { /*Pseudoelement*/
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 300px;
+				bottom: 0;
+				left: 0;
+				background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%); /*Verlauf -> gibt es Generatoren dafür*/
+			}
+			.keyvisual .wrapper {
+				height: 100%;
+				box-sizing: border-box;
+			}
 
-h1,h2,h3{
-  font-family: "Noto Serif", serif;
-  font-weight: normal;
-}
+			.keyvisual aside {
+				position: relative;
+				top: 150px;
+				background: rgba(255,255,255,0.9); /* Code für bisschen transparent */
+				padding: 20px;
+				width: 400px;
+			}
+			.keyvisual aside ul{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.keyvisual aside ul li a{
+				color: #5c6971;
+				text-decoration: none;
+				display: block;
+				padding: 15px 0;
+				border-top: 1px solid #5c6971; /* macht Linien in Einrichtungen und Service (= aside) */
+			}
+			.keyvisual aside ul li:first-child a {
+				border-top: none; /* macht erste Linie bei Einrichtungen und Service weg*/
+			}
+			.keyvisual .text {
+				position: absolute;
+				bottom: 50px;
+				z-index: 50;
+			}
+			.keyvisual .text * {
+				color: white;
+			}
+			.keyvisual .text h1{
+				font-size: 50px;
+				margin-top: 20px;
+			}
+			.keyvisual .text h2{
+				text-transform: uppercase;
+				font-size: 20px;
+			}
 
-.wrapper{
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
-  padding: 20px;
-}
+			.button {
+				background-color: #e2001a;
+				padding: 20px;
+				text-decoration: none;
+				color: white;
+				display: inline-block;
+			}
+			.teaser ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.teaser ul:after{
+				content: "";
+				visibility: hidden;
+				display: block;
+				clear: both;
+			}
+			.teaser ul li{
+				display: inline-block;
+				width: calc(50% - 20px);
+				margin: 0 10px;
+				float: left;
+				position: relative;
+				overflow: hidden; /* Elemente die über Content drüber ragen, werden durch overflow: hidden abgeschnitten*/
+			}
+			.teaser ul li img{
+				width: 100%;
+			}
+			.teaser ul li .text{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 100%;
+				text-align: center;
+				background-color: rgba(255, 255, 255, 0.5);
+				transition: 0.5s;
+			}
+			.teaser ul li:hover .text{
+				top: 0;
+			}
+			.teaser ul li .text h2{
+				margin-top: 40px;
+			}
 
-.teaser ul{
-  list-style: none;
-  margin: 0 -10px;
-  padding: 40px 0;
-
-}
-
-.teaser ul:after{
-  content: "";
-  visibility: hidden;
-  display: block;
-  clear: both;
-
-}
-
-.teaser ul li {
-  display: inline-block;
-  width: calc(50% - 20px);
-  margin: 0 10px;
-  float: left;
-  position: relative;
-  overflow: hidden;
-  
-}
-
-  
-.teaser ul li .text {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 100%;
-  text-align: center;
-  background-color: rgba(255,255, 255, 0.5);
-  transition: all 0.5s;
-}
-
-.teaser ul li img{
-  width: 100%;
-
-}
-
-.teaser ul li:hover .text {
-  top: 0;
-}
-
-.teaser ul li .text h2{
-  margin-top: 40px;
-}
-.wrapper .teaser ul li a {
-      text-decoration: none;
-      color: white;
-      background-color: #e2001a;
-      padding: 20px;
-  text-decoration: none;
-  border-radius: 20px;
-    }
-header {
-  position: fixed;
-  width: 100%;
-  height: 100px;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 100;
-  
-}
- nav{
-   position: absolute;
-   top:  0;
-   right: 0;
- }
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0; 
-  
-
-}
-
-nav > ul >li{
-  display: inline-block;
-}
-
-
- nav> ul > li > a {
-  padding: 0 20px;
-  text-decoration: none;
-  line-height: 100px;
-    display: block;
-    transition: all 0.5s;
-}
-
-    header nav ul li a{
-      color: #5c6971;
-    }
-
-
-    header nav ul li:hover a {
-  background-color: #e2001a;
-  color: white;
-}
-
-header nav ul li ul { 
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  background-color: #e2001a;
-  padding:10px;
-  transition: all 0.5s 0.2s;}
-
-  header nav ul li:hover ul {
-  visibility: visible;
-  opacity: 1;
-}
-
-  header nav ul li ul li a {
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    color: white;
-  }
-
-
-.keyvisual{
-  background-image: url(keyvisual.jpg);
-  height: 100vh;
-  min-height: 850px;
-  background-size: cover;
-  position: relative;}
-
-.keyvisual:after{
-  content: "";
-  position: absolute;
-  height: 600px;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 50%);
-}
-
-  .keyvisual .wrapper{
-    height: 100%;
-    box-sizing: border-box;
-  }
-
-  .keyvisual aside{
-    position: relative;
-    top: 150px;
-    background-color:rgba(255, 255, 255, 0.9);
-    padding: 20px ;
-    width: 400px ;
-  }
-
-            .keyvisual aside ul{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-    }
-    .keyvisual aside  ul li a{
-      color: #5c6971;
-      text-decoration: none;
-      display: block;
-      padding: 15px 0;
-      border-top: 1px solid grey;
-    }
-
-    .keyvisual aside ul li:first-child a{
-      border-top: none;
-    }
-
-    
-           .keyvisual aside ul li{
-          
-            color: #5c6971;}
-
-  .keyvisual .text{
-    position: absolute;
-    bottom: 50px;
-    z-index: 50;
-
-  }
-  .keyvisual .text * {
-    color: white;
-  }
-         .keyvisual .text h1{
-    font-size: 50px;
-    margin-top: 20px;}
-
-  .keyvisual .text h2{
-    text-transform: uppercase;
-    font-size: 20px;
-  }
-  .button {
-    background-color: #e2001a;
-    padding: 20px;
-    text-decoration: none;
-    border-radius: 20px;
-    color: white;
-    display: inline-block;
-  }
-   footer { 
-   background-color: #262626;
-   }
-  footer nav ul li a {
-   color: #fff;
-   text-decoration: none;
-}
-   footer img{
-     width: 150px; }
+			footer{
+				background-color: #262626;
+			}
+			footer img{
+				width: 150px;
+			}
+			footer nav ul li a{
+				color: #fff;
+			}
+			
