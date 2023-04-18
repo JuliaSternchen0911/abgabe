@@ -57,14 +57,14 @@
 				color: #5c6971;
 			}
 			header nav ul li:hover a{
-				background-color: #e2001a;
+				background-color: #13c003;
 				color: white;
 			}
 			header nav ul li ul {
 				visibility: hidden; /* ausblenden */
 				opacity: 0;
 				position: absolute;
-				background-color: #e2001a;
+				background-color: #13c003;
 				padding: 10px;
 				transition: all 0.5s 0.2s; /* 1. Begriff = Dauer der Einbledung 2. Begriff = Latenz*/
 
@@ -139,7 +139,7 @@
 			}
 
 			.button {
-				background-color: #e2001a;
+				background-color: #13c003;
 				padding: 20px;
 				text-decoration: none;
 				color: white;
@@ -193,4 +193,3 @@
 			footer nav ul li a{
 				color: #fff;
 			}
-			
