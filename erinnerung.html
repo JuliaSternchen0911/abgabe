@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Meine Pflanzen</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <script defer src="./build/bundle.js"></script>
+
+</head>
+<body>
+    <ul>
+        <li><a href="index.html" data-title="Home">Home</a></li>
+        <li><a href="meinePflanzen.html" data-title="Meine Pflanzen">Meine Pflanzen</a></li>
+        <li><a href="erinnerung.html" data-title="Erinnerung">Erinnerung</a></li>
+        <li><a href="pflegeanleitung.html" data-title="Pflegeanleitung">Pflegeanleitung</a></li>
+      </ul>
+
+	<h1>Meine Pflanzen</h1>
+	<div class="form-container">
+		<form>
+			<label for="pflanzenname">Pflanzenname:</label>
+			<input type="text" id="pflanzenname" name="pflanzenname"><br><br>
+			<label for="gießintervall">Intervall (in Tagen):</label>
+			<input type="number" id="gießintervall" name="gießintervall"><br><br>
+			<label for="standort">Standort:</label>
+			<select id="standort" name="standort">
+				<option value="Wohnzimmer">Wohnzimmer</option>
+				<option value="Schlafzimmer">Schlafzimmer</option>
+				<option value="Büro">Büro</option>
+				<option value="Garten">Garten</option>
+				<option value="Küche">Küche</option>
+				<option value="Balkon">Balkon</option>
+			</select><br><br>
+			<input type="button" value="Pflanze hinzufügen" onclick="pflanzeHinzufuegen()">
+		</form>
+	</div>
+	<h2>Pflanzenliste</h2>
+	<ul id="pflanzenliste">
+	</ul>
+	<script src="script.js"></script>
+</body>
+</html>
