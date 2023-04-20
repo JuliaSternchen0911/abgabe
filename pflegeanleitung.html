@@ -1,41 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
+
 <head>
-	<title>Meine Pflanzen</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-    <script defer src="./build/bundle.js"></script>
-
+	<meta charset="utf-8">
+	<title>Bloom Bloombuddy</title>
+	<link rel="stylesheet" type="text/css" href="style4.css">
+	<script defer src="./build/bundle.js"></script>
 </head>
-<body>
-    <ul>
-        <li><a href="#" data-title="Home">Home</a></li>
-        <li><a href="#" data-title="Meine Pflanzen">Meine Pflanzen</a></li>
-        <li><a href="#" data-title="Erinnerung">Erinnerung</a></li>
-        <li><a href="#" data-title="Pflegeanleitung">Pflegeanleitung</a></li>
-      </ul>
 
-	<h1>Meine Pflanzen</h1>
-	<div class="form-container">
-		<form>
-			<label for="pflanzenname">Pflanzenname:</label>
-			<input type="text" id="pflanzenname" name="pflanzenname"><br><br>
-			<label for="gießintervall">Intervall (in Tagen):</label>
-			<input type="number" id="gießintervall" name="gießintervall"><br><br>
-			<label for="standort">Standort:</label>
-			<select id="standort" name="standort">
-				<option value="Wohnzimmer">Wohnzimmer</option>
-				<option value="Schlafzimmer">Schlafzimmer</option>
-				<option value="Büro">Büro</option>
-				<option value="Garten">Garten</option>
-				<option value="Küche">Küche</option>
-				<option value="Balkon">Balkon</option>
-			</select><br><br>
-			<input type="button" value="Pflanze hinzufügen" onclick="pflanzeHinzufuegen()">
-		</form>
-	</div>
-	<h2>Pflanzenliste</h2>
-	<ul id="pflanzenliste">
-	</ul>
-	<script src="script.js"></script>
+<body>
+	<header>
+		<div class="wrapper">
+			<img id="logo" src="logo.png" alt="Logo" height="120px" width="150px" />
+			<nav class="main">
+				<ul>
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					</li>
+					<li>
+						<a href="meinePflanzen.html">Meine Pflanzen</a>
+					</li>
+
+					<li>
+						<a href="pflegeanleitung.html">Pflegehinweise</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section class="main">
+		<div class="keyvisual">
+			<div class="wrapper">
+				<aside>
+					<h1>Zimmerpflanzen-Tipps</h1>
+					<ul>
+						<li>
+							<a>1. Fünf pflegeleichte Zimmerpflanzen für Anfänger</a>
+						</li>
+						<li>
+							<a>2. Zimmerpflanzen richtig gepflegt</a>
+						</li>
+						<li>
+							<a>3. Zimmerpflanzen vermehren</a>
+						</li>
+						<li>
+							<a>4. Krankheiten und Schädlinge bei Zimmerpflanzen</a>
+						</li>
+						<li>
+							<a>5. Fünf häufigste Fehler bei der Pflege von Zimmerpflanzen</a>
+						</li>
+					</ul>
+				</aside>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="teaser">
+
+				<div class="slideshow">
+					<img class="slide" src="bild1.jpg" height="350px" width="400px">
+					<img class="slide" src="bild2.jpg"height="350px" width="400px">
+					<img class="slide" src="bild3.jpg"height="350px" width="400px">
+					<img class="slide" src="bild4.jpg"height="350px" width="400px">
+					<img class="slide" src="bild5.jpg"height="350px" width="400px">
+				  </div>
+
+				  <h2>Fünf pflegeleichte Zimmerpflanzen für Anfänger</h2>
+				  
+				
+	</section>
+	<script>const slides = document.querySelectorAll('.slide');
+		let currentSlide = 0;
+		
+		function showSlide() {
+		  // Setze alle Slides auf opacity 0, damit nur die aktive Slide sichtbar ist
+		  slides.forEach(slide => slide.classList.remove('active'));
+		
+		  // Setze die aktive Slide auf opacity 1 und erhöhe currentSlide
+		  slides[currentSlide].classList.add('active');
+		  currentSlide = (currentSlide + 1) % slides.length;
+		
+		  // Rufe showSlide() alle 3 Sekunden auf
+		  setTimeout(showSlide, 3000);
+		}
+		
+		// Starte die Slideshow
+		showSlide();
+		</script>
 </body>
+
 </html>
