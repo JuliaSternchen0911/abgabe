@@ -80,7 +80,7 @@
 				color: white;				
 			}
 			.keyvisual {
-				background-image: url(keyvisual4.jpg);
+				background-image: url(/assets/keyvisual4.jpg);
 				height: 100vh;
 				min-height: 850px;
 				background-size: cover; /*um Fläche mit einer Grafik ganz zu füllen*/
