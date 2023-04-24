@@ -1,9 +1,11 @@
 import { pflanzenHinzufuegen, pflanzenBenachrichtigung, pflanzenlisteAktualisieren } from "./pflanzen";
+import { ladePflanzen } from "./pflanzenStorage";
 
 if (window.location.pathname === "/meinePflanzen.html") {
     //lade die Liste der Pflanzen Initial
-    pflanzenlisteAktualisieren([]);
-
+    let pflanzen= ladePflanzen();
+    pflanzenlisteAktualisieren(pflanzen);
+  
     //Registriere die Methode bei den Buttons
     const but = document.getElementById("pflanzeHinzufuegen") as HTMLInputElement;
     but.onclick = pflanzenHinzufuegen;
