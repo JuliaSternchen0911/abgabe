@@ -9,7 +9,7 @@ if (window.location.pathname === "/meinePflanzen.html") {
     //Registriere die Methode bei den Buttons
     const but = document.getElementById("pflanzeHinzufuegen") as HTMLInputElement;
     but.onclick = pflanzenHinzufuegen;
-} else if (window.location.pathname ==="erinnerung.html"){
+} else if (window.location.pathname ==="erinnerungen.html"){
     pflanzenBenachrichtigung();
 }
 
