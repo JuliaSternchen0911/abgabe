@@ -46,8 +46,7 @@
 							<input type="text" id="pflanzenname" name="pflanzenname" required>
 							<br></br>
 							<label for="gießintervall">Gießintervall:</label>
-							<input type="number" id="tage" name="tage" required> Tage
-							<input type="number" id="stunden" name="stunden" required> Stunden
+							<input type="number" id="gießintervall" name="tage" required>tage</input>
 							<br></br>
 							<label for="standort">Standort:</label>
 							<select id="standort" name="standort">
@@ -59,9 +58,10 @@
 								<option value="balkon">Balkon</option>
 								<option value="garten">Garten</option>
 							</select>
-
-							<input type="button" value="Pflanze hinzufügen" onclick="addPlant()">
+							<input id="pflanzenHinzufuegen" type="button" value="Pflanze hinzufügen">
 						</form>
+
+					<ul id="pflanzenliste"></ul>
 					</div>
 
 </body>
