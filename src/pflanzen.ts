@@ -28,6 +28,7 @@ function pflanzenHinzufuegen() {
         name: pflanzenname.value,
         gießintervall: parseInt(gießintervall.value),
         standort: standort.value,
+        beginnDesIntervalls:Date;
     };
     console.dir(newPflanze);
 
