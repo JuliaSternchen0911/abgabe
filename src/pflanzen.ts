@@ -23,12 +23,14 @@ function pflanzenHinzufuegen() {
     if (standort.value === "") {
         return
     }
+    const date = new Date();
+    date.setHours(0, 0, 0, 0);
     //Pflanzenobjekt erstellen
     const newPflanze: Pflanze = {
         name: pflanzenname.value,
         gießintervall: parseInt(gießintervall.value),
         standort: standort.value,
-        beginnDesIntervalls:Date;
+        beginnDesIntervalls: date
     };
     console.dir(newPflanze);
 
@@ -45,10 +47,13 @@ function pflanzenHinzufuegen() {
 }
 function pflanzenlisteAktualisieren(pflanzen: Pflanze[]) {
     let pflanzenliste = document.getElementById("pflanzenliste") as HTMLUListElement;
+    const date = new Date();
+    date.setHours(0, 0, 0, 0);
     //Für jede Pflanze in der Liste eine Listeneintrag erstellen
     for (let i = 0; i < pflanzen.length; i++) {
         let pflanze = pflanzen[i];
-
+        //( meineVar + x ) - (meineVar + y)
+        console.log(date.getTime() - pflanze.beginnDesIntervalls.getTime());
         //Listeneintrag erstellen
         let eintrag = document.createElement("li");
         eintrag.innerHTML =
@@ -65,10 +70,8 @@ function pflanzenlisteAktualisieren(pflanzen: Pflanze[]) {
     }
 }
 
-function pflanzenBenachrichtigung() {
-    const aktuellesDatum = new Date();
-}
 
-export { pflanzenHinzufuegen, pflanzenBenachrichtigung, pflanzenlisteAktualisieren };
+
+export { pflanzenHinzufuegen, pflanzenlisteAktualisieren };
 
 
