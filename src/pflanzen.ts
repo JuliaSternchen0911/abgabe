@@ -46,6 +46,7 @@ function pflanzenHinzufuegen(e: Event) {
 }
 function pflanzenlisteAktualisieren(pflanzen: Pflanze[]) {
     let pflanzenliste = document.getElementById("pflanzenliste") as HTMLUListElement;
+    pflanzenliste.innerHTML = "";
     const date = new Date();
     date.setHours(0, 0, 0, 0);
 
@@ -54,6 +55,7 @@ function pflanzenlisteAktualisieren(pflanzen: Pflanze[]) {
     for (let i = 0; i < pflanzen.length; i++) {
         let pflanze = pflanzen[i];
         let beginnDesIntervalls = new Date(pflanze.beginnDesIntervalls);
+        beginnDesIntervalls.setHours(0,0,0,0);
         console.dir(pflanze);
         //( SekundenSeid1.1.1970 + x ) - ( SekundenSeid1.1.1970 + y)
         let dif = (date.getTime() - beginnDesIntervalls.getTime());
@@ -71,7 +73,9 @@ function pflanzenlisteAktualisieren(pflanzen: Pflanze[]) {
             pflanze.gießintervall +
             //tenärer Operator
             " Tage " + ((sollGießen) ? " 🌧 " : "");
-
+        console.dir({
+            name: pflanze.name, dif, difTage, sollGießen,datum:beginnDesIntervalls,pflanze
+        })
         //Listeneintrag zur Pflanzenliste hinzufügen
         pflanzenliste.appendChild(eintrag);
     }
