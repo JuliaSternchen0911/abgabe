@@ -1,6 +1,5 @@
 import { pflanzenHinzufuegen, pflanzenlisteAktualisieren } from "./pflanzen";
-import { ladePflanzen } from "./pflanzenStorage";
-import { slideShow } from "./slideshow";
+import { ladePflanzen } from "./pflanzenStorage";;
 
 if (window.location.pathname === "/meinePflanzen.html") {
     //lade die Liste der Pflanzen Initial
@@ -11,9 +10,7 @@ if (window.location.pathname === "/meinePflanzen.html") {
     const but = document.getElementById("pflanzeHinzufuegen") as HTMLInputElement;
     but.onclick = pflanzenHinzufuegen;
 } 
-else if (window.location.pathname ==="/pflegeanleitung.html"){
-    slideShow();
-}
+
 
 
 
