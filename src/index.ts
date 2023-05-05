@@ -1,7 +1,7 @@
 import { pflanzenHinzufuegen, pflanzenlisteAktualisieren } from "./pflanzen";
 import { ladePflanzen } from "./pflanzenStorage";;
 
-if (window.location.pathname === "/meinePflanzen.html") {
+if (window.location.pathname === "/pflanzen.html") {
     //lade die Liste der Pflanzen Initial
     let pflanzen= ladePflanzen();
     pflanzenlisteAktualisieren(pflanzen);
