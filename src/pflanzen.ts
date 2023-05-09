@@ -1,4 +1,5 @@
 //// Importiert die Funktionen "ladePflanzen" und "speicherePflanzen" aus dem Modul "./pflanzenStorage".
+import moment from "moment";
 import { ladePflanzen, speicherePflanzen } from "./pflanzenStorage";
 
 // Importiert den Typ "Pflanze" aus dem Modul "./types"
@@ -89,6 +90,8 @@ function pflanzenlisteAktualisieren(pflanzen: Pflanze[]) {
         let sollGießen = difTage % pflanze.gießintervall == 0;
         //Listeneintrag erstellen
 
+
+
         let eintrag = document.createElement("li");
         eintrag.innerHTML = copySource.innerHTML
 
@@ -99,17 +102,39 @@ function pflanzenlisteAktualisieren(pflanzen: Pflanze[]) {
 
         const removeButton = eintrag.querySelector("[data-entry-remove='']") as HTMLButtonElement
         removeButton.onclick = () => {
+            let aktuellePosition = i
 
-            const positionDerPflanzeZuLoeschen = i
+            pflanzen.splice(aktuellePosition, 1)
+            // aus dem local Storage löschen  mit functions aufruf (neu speicherung im local storage)
+            speicherePflanzen(pflanzen);
+            pflanzenlisteAktualisieren(pflanzen)
+        }
+        const wasserButton = eintrag.querySelector("[data-entry-wasser='']") as HTMLButtonElement
+        wasserButton.onclick = () => {
+            pflanze.beginnDesIntervalls = new Date()
 
-            pflanzen.splice(positionDerPflanzeZuLoeschen, 1)
 
             // aus dem local Storage löschen  mit functions aufruf (neu speicherung im local storage)
             speicherePflanzen(pflanzen);
             pflanzenlisteAktualisieren(pflanzen)
         }
 
+        let endDatum = moment(beginnDesIntervalls).add(pflanze.gießintervall, 'days')
+        const endDatumEntry = eintrag.querySelector("[data-entry-next-datum='']") as HTMLTimeElement
+        endDatumEntry.innerText = endDatum.format("LL")
+        if(endDatum.isBefore(new Date())){
+            endDatumEntry.style.color="red"
+        }
 
+        const progressEntry = eintrag.querySelector("[data-entry-progress='']") as HTMLDivElement
+        let prozent = (difTage / pflanze.gießintervall) * 100
+        if (prozent <= 100) {
+            progressEntry.style.width = prozent + "%"
+        }
+        else {
+            progressEntry.style.width = "100%"
+            progressEntry.style.backgroundColor = "red"
+        }
 
 
         const nameEntry = eintrag.querySelector("[data-entry-name='']") as HTMLParagraphElement
