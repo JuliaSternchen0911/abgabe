@@ -1,25 +1,49 @@
+//// Importiert die Funktionen "ladePflanzen" und "speicherePflanzen" aus dem Modul "./pflanzenStorage".
 import { ladePflanzen, speicherePflanzen } from "./pflanzenStorage";
+
+// Importiert den Typ "Pflanze" aus dem Modul "./types"
 import { Pflanze } from "./types";
 
-//Funktion zum Hinzufügen einer neuen Pflanze
+// Funktion zum Hinzufügen einer neuen Pflanze
+// Definiert die Funktion "pflanzenHinzufuegen", die als Event-Handler verwendet wird.
 function pflanzenHinzufuegen(e: Event) {
+
+    // Verhindert das Standardverhalten des Events, d.h. das Neuzeichnen der Seite nach dem Absenden des Formulars.
     e.preventDefault();
+
+    // Ruft die Funktion "ladePflanzen" auf und speichert das zurückgegebene Array von Pflanzen in der Variablen "pflanzen".
     const pflanzen: Pflanze[] = ladePflanzen();
 
-
+    /* Ruft das HTML-Element mit der ID "pflanzenname" ab und speichert es in der Variablen "pflanzenname". 
+    Der Typ des Elements wird als HTMLInputElement definiert.*/
     const pflanzenname = document.querySelector("#pflanzenname") as HTMLInputElement;
+
+    /* Ruft das HTML-Element mit der ID "gießintervall" ab und speichert es in der Variablen "gießintervall".
+     Der Typ des Elements wird als HTMLInputElement definiert.*/
     const gießintervall = document.querySelector("#gießintervall") as HTMLInputElement;
+
+    /* Ruft das HTML-Element mit der ID "standort" ab und speichert es in der Variablen 
+    "standort". Der Typ des Elements wird als HTMLInputElement definiert.*/
     const standort = document.querySelector("#standort") as HTMLInputElement;
 
+
+    // Gibt den Wert des Elements "gießintervall" in der Browser-Konsole aus.
     console.log(gießintervall.value);
+    // Überprüft, ob das Element "gießintervall" keinen Wert hat.
     if (gießintervall.value === "") {
+        // Zeigt eine Warnmeldung an.
         alert("Pflichtfeld")
+        // Beendet die Funktion.
         return
     }
+    // Überprüft, ob das Element "pflanzenname" keinen Wert hat.
     if (pflanzenname.value === "") {
+        // Beendet die Funktion.
         return
     }
+    // Überprüft, ob das Element "standort" keinen Wert hat.
     if (standort.value === "") {
+
         return
     }
     const date = new Date();
@@ -71,17 +95,17 @@ function pflanzenlisteAktualisieren(pflanzen: Pflanze[]) {
         copySource.classList.forEach(entry => {
             eintrag.classList.add(entry)
         })
+        eintrag.classList.remove('invisible')
 
         const removeButton = eintrag.querySelector("[data-entry-remove='']") as HTMLButtonElement
         removeButton.onclick = () => {
-            const pflanzeZuLoeschen = pflanze
 
             const positionDerPflanzeZuLoeschen = i
 
             pflanzen.splice(positionDerPflanzeZuLoeschen, 1)
 
-            // aus dem local Storage löschen  
-
+            // aus dem local Storage löschen  mit functions aufruf (neu speicherung im local storage)
+            speicherePflanzen(pflanzen);
             pflanzenlisteAktualisieren(pflanzen)
         }
 
@@ -100,25 +124,8 @@ function pflanzenlisteAktualisieren(pflanzen: Pflanze[]) {
         const erstellungsDatumEntry = eintrag.querySelector("[data-entry-datum='']") as HTMLTimeElement
         erstellungsDatumEntry.innerText = beginnDesIntervalls.toDateString()
 
-        eintrag.classList.remove('invisible')
+
         pflanzenliste.appendChild(eintrag);
-        /*
-                let eintrag = document.createElement("li");
-                eintrag.innerHTML =
-                    "<b>" +
-                    pflanze.name +
-                    "</b> (" +
-                    pflanze.standort +
-                    ")- gießen alle " +
-                    pflanze.gießintervall +
-                    //tenärer Operator
-                    " Tage " + ((sollGießen) ? " 🌧 " : "");
-                console.dir({
-                    name: pflanze.name, dif, difTage, sollGießen,datum:beginnDesIntervalls,pflanze
-                })
-                //Listeneintrag zur Pflanzenliste hinzufügen
-                pflanzenliste.appendChild(eintrag);
-        */
     }
 }
 
