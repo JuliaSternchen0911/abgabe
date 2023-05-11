@@ -12,8 +12,8 @@ function speicherePflanzen(pflanzen: Pflanze[]) {
 
 }
 
-/*adePflanzen" liest die Liste von Pflanzenobjekten aus dem Local Storage aus, 
-indem sie das "pflanzenKey"-Schlüssel-Wert-Paar abruft und die JSON-Serialisierung des
+/*ladePflanzen" liest die Liste von Pflanzenobjekten aus dem Local Storage aus, 
+indem sie das "pflanzenKey"-Schlüssel-Wert-Paar abruft und das JSON des
  Wertes in eine Liste von Pflanzenobjekten des Typs "Pflanze" umwandelt. Wenn der Wert des 
  "pflanzenKey"-Schlüssels null oder leer ist, gibt die Funktion eine leere Liste zurück.*/
 function ladePflanzen(): Pflanze[] {
