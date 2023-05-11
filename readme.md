@@ -1,29 +1,13 @@
-## How to get started
+## Gieß-Erinnerungsapplikation
+Dies ist eine Gieß-Erinnerungsapplikation, die zwei HTML-Seiten zur besseren Handhabung von Pflanzen enthält. Eine Seite ermöglicht es Ihnen, Pflanzen mit Namen, Standort und Gießintervall in eine Liste aufzunehmen. Wenn Sie die Pflanze gießen müssen, wird automatisch ein Ladebalken angezeigt. Nachdem dieser vollständig geladen ist, können Sie die Pflanze gießen, indem Sie auf den "Gießen"-Button klicken.
 
-## Prerequisites
-Have a modern version of Node.installed. Last check was with v18.14.2
+## Applikation starten
+1.	git clone  https://github.com/JuliaSternchen0911/abgabe
+2.	npm install
+3.	npm run tailwind 
+4.	npm build
+5.	npm run serve
 
-## How to set up
-
-- Open a Terminal in the folder containing the package.json
-- Type `npm i` to install the dependencies inside of the project automatically
-- Type `npm run build` into the terminal and see if your files would be compiled correctly
-- Take a look at the `index.ts`, the package.json and the `tsconfig.json` file to see how they work
-- The `index.ts` file is the entry-point of your application (defined in `rollup.config.js`) - see how it can import other modules
-- after you watched how the typescript modules work with each other you can delete all .ts files in the src folder except `index.ts`
-- then empty the `index.ts` file and empty the body of your `index.html` file and start building your own app
-
-## Starting the app
-
-- After you did set up your application, run `npm run build` to compile it. If there are no erros, there should be a "build"-folder in your project folder
-- take a look at `index.html` - it should already have a script file containing the result of your build folder
-- 
-
-Write any source files in typescript inside the source folder, the main file being index.ts as entry file for rollup.
-
-Type tsc to javascript
-
-Link your compiled bundle.js into your HTML-Files.
 
 
 
