@@ -134,8 +134,8 @@
             </ul>
 
             <ul role="list" class="divide-y divide-gray-100">
-                <li id="copySource" class="flex items-center justify-between gap-x-6 py-5 invisible">
-                    <div class="min-w-0">
+                <li id="copySource" class="flex items-center justify-between gap-x-6 py-5 invisible ">
+                    <div class="min-w-0 w-36">
                         <div class="flex items-start gap-x-3">
                             <p class="text-sm font-semibold leading-6 text-gray-900" data-entry-name="">GraphQL API</p>
                             <p
@@ -143,12 +143,29 @@
                                 data-entry-intervall="">Intervall
                                 </p>
                         </div>
+
+                        <!--data attribut aufgrund von nicht erneut verwendeung der id -->
                         <div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
-                            <p class="whitespace-nowrap"><time datetime="2023-03-17T00:00Z" data-entry-datum="">March 17, 2023</time></p>
-                            <svg viewBox="0 0 2 2" class="h-0.5 w-0.5 fill-current">
-                                <circle cx="1" cy="1" r="1" />
-                            </svg>
+                           
                             <p class="truncate" data-entry-standort="">Created by Leslie Alexander</p>
+                        </div>
+                    </div>                   <div class="w-48 lg:w-80">
+                        <div class="flex items-start gap-x-3">
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                <div class="bg-blue-600 h-2.5 rounded-full" data-entry-progress="" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="-mt-px flex divide-x divide-gray-200">
+                            <div class="flex flex-1 w-0 text-right">
+                                <div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
+                                    <p class="whitespace-nowrap "><time datetime="2023-03-17T00:00Z" data-entry-datum="">March 17, 2023</time></p>  
+                                </div>
+                            </div>
+                            <div class="-ml-px flex flex-1 text-right w-full ">
+                                <div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500 w-full ">
+                                    <p class="whitespace-nowrap w-full"><time datetime="2023-03-17T00:00Z" data-entry-next-datum="">March 17, 2023</time></p>  
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="flex flex-none items-center gap-x-4">
@@ -157,6 +174,7 @@
                         <span class="isolate inline-flex rounded-md shadow-sm">
                         <button 
                             type="button" 
+                            data-entry-wasser=""
                             class="relative -ml-px inline-flex items-center bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">Gießen</button>
                         <button 
                             type="button" 
