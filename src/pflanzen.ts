@@ -56,7 +56,7 @@ function pflanzenHinzufuegen(e: Event) {
 
     //Pflanzenobjekt erstellen
 
-    //Objekt mit dem Namen newPflanze erstellt und dem yp Pflanze zugewiesen
+    //Objekt mit dem Namen newPflanze erstellt und dem typ Pflanze zugewiesen
     //name,gießintervall,standort wird aus dem Wert des HTML-Formularfelds pflanzenname geholt
     const newPflanze: Pflanze = {
         name: pflanzenname.value,

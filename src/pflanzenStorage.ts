@@ -28,5 +28,5 @@ function ladePflanzen(): Pflanze[] {
 /*exportiert die Funktionen "speicherePflanzen" und "ladePflanzen",
  so dass sie in anderen Dateien oder Modulen innerhalb der Anwendung verwendet werden können.*/
 export {speicherePflanzen, ladePflanzen }
-
+ 
 
