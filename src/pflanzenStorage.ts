@@ -1,11 +1,11 @@
-// importiert das "Pflanze"-Interface aus der "./types"-Datei.
+// importiert das "Pflanze"-Typ aus der "./types"-Datei.
 import { Pflanze } from "./types";
 
 //Definiert eine Konstante namens "pflanzenKey", die den Schlüssel für den Local Storage-Objektspeicher enthält
 const pflanzenKey = "pflanzen";
 
 /*"speicherePflanzen" speichert eine Liste von Pflanzenobjekten im Local Storage, indem sie das
- "pflanzenKey"-Schlüssel-Wert-Paar mit der serialisierten JSON-Darstellung der Pflanzen aktualisiert.
+ "pflanzenKey"-Schlüssel-Wert-Paar mit der JSON-Darstellung der Pflanzen aktualisiert.
   Die Funktion erwartet ein Argument, das eine Liste von Pflanzenobjekten des Typs "Pflanze" ist.*/
 function speicherePflanzen(pflanzen: Pflanze[]) {
     localStorage.setItem(pflanzenKey, JSON.stringify(pflanzen));

@@ -3,7 +3,7 @@
 import { pflanzenHinzufuegen, pflanzenlisteAktualisieren } from "./pflanzen";
 import { ladePflanzen } from "./pflanzenStorage";;
 
-//prüft, ob die aktuelle URL-Adresse "pflanzen.html" lautet
+//prüft, ob die aktuelle URL-Adresse "pflanzen.html" lautet (überpürft Pfad)
 if (window.location.pathname === "/pflanzen.html") {
     /*lädt die Liste der Pflanzen aus dem Local Storage, indem sie die "ladePflanzen"
     -Funktion aufruft, und aktualisiert die Pflanzenliste auf der Seite durch den Aufruf
